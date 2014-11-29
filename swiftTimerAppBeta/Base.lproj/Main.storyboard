@@ -12,11 +12,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blurBlue" id="fjc-07-ch8">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="37:18" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i54-E7-dju">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i54-E7-dju">
                                 <rect key="frame" x="16" y="50" width="288" height="175"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="50"/>
@@ -32,6 +28,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="didPressedStartButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Vyf-yw-PoA"/>
+                                </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8L1-b8-yZF">
                                 <rect key="frame" x="16" y="444" width="288" height="48"/>
@@ -43,9 +42,14 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="didPressedStartButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VYS-Q8-WaT"/>
+                                    <action selector="didPressedStopButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZEV-cm-Ldx"/>
+                                    <segue destination="Kcn-ZB-RmT" kind="push" id="pOE-77-rJT"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blurBlue" id="fjc-07-ch8">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -53,26 +57,36 @@
                     <connections>
                         <outlet property="startButton" destination="Q4f-nk-Cdk" id="2q5-cB-Vua"/>
                         <outlet property="stopButton" destination="8L1-b8-yZF" id="1Eh-ah-ftg"/>
+                        <outlet property="timeLabel" destination="i54-E7-dju" id="FtM-s3-CvS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="829" y="324"/>
+            <point key="canvasLocation" x="657" y="338"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Saved Times-->
         <scene sceneID="Tdo-vK-x1t">
             <objects>
-                <tableViewController id="Kcn-ZB-RmT" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="OFN-hj-yQY">
+                <tableViewController id="Kcn-ZB-RmT" customClass="SavedTimesTableViewController" customModule="swiftTimerAppBeta" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="98" sectionHeaderHeight="22" sectionFooterHeight="22" id="OFN-hj-yQY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Zur-eI-hse">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="timeCell" textLabel="p2G-GD-NwX" rowHeight="100" style="IBUITableViewCellStyleDefault" id="Zur-eI-hse">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zur-eI-hse" id="hXe-hL-xCI">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p2G-GD-NwX">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -80,11 +94,11 @@
                             <outlet property="delegate" destination="Kcn-ZB-RmT" id="Gbl-KD-pSk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="XTn-TQ-R7k"/>
+                    <navigationItem key="navigationItem" title="Saved Times" id="XTn-TQ-R7k"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z0e-R1-Zex" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1226" y="338"/>
+            <point key="canvasLocation" x="1136" y="338"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Exa-2R-hnz">
@@ -94,6 +108,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GE5-Z3-q1A">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -13,6 +13,7 @@
 		881FBC241A2A34DE00B8639F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 881FBC231A2A34DE00B8639F /* Images.xcassets */; };
 		881FBC271A2A34DE00B8639F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881FBC251A2A34DE00B8639F /* LaunchScreen.xib */; };
 		881FBC331A2A34DE00B8639F /* swiftTimerAppBetaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FBC321A2A34DE00B8639F /* swiftTimerAppBetaTests.swift */; };
+		881FBC3D1A2A6BBA00B8639F /* SavedTimesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FBC3C1A2A6BBA00B8639F /* SavedTimesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		881FBC2C1A2A34DE00B8639F /* swiftTimerAppBetaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = swiftTimerAppBetaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		881FBC311A2A34DE00B8639F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		881FBC321A2A34DE00B8639F /* swiftTimerAppBetaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftTimerAppBetaTests.swift; sourceTree = "<group>"; };
+		881FBC3C1A2A6BBA00B8639F /* SavedTimesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedTimesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				881FBC1C1A2A34DE00B8639F /* AppDelegate.swift */,
 				881FBC1E1A2A34DE00B8639F /* ViewController.swift */,
+				881FBC3C1A2A6BBA00B8639F /* SavedTimesTableViewController.swift */,
 				881FBC201A2A34DE00B8639F /* Main.storyboard */,
 				881FBC231A2A34DE00B8639F /* Images.xcassets */,
 				881FBC251A2A34DE00B8639F /* LaunchScreen.xib */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				881FBC3D1A2A6BBA00B8639F /* SavedTimesTableViewController.swift in Sources */,
 				881FBC1F1A2A34DE00B8639F /* ViewController.swift in Sources */,
 				881FBC1D1A2A34DE00B8639F /* AppDelegate.swift in Sources */,
 			);
